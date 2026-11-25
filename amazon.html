@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+       
+        main{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #eaeded;
+            color: #0f1111;
+            overflow-x: hidden;
+        }
+
+       
+        .hover-border {
+            border: 1px solid transparent;
+            border-radius: 2px;
+            padding: 5px 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .hover-border:hover {
+            border-color: #ffffff;
+        }
+
+       
+        .navbar {
+            height: 60px;
+            background-color: #131921;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            color: #ffffff;
+            gap: 10px;
+        }
+
+       
+        .nav-logo {
+            padding: 4px 6px;
+        }
+
+        .nav-logo img {
+            height: 30px;
+            display: block;
+        }
+
+       
+        .nav-address {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-address .loc-icon {
+            height: 18px;
+            width: 15px;
+        }
+
+        .address-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .text-small {
+            font-size: 12px;
+            color: #cccccc;
+        }
+
+        .text-bold {
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+       
+        .nav-search {
+            flex: 1;
+            max-width: 850px;
+            height: 40px;
+            display: flex;
+            border-radius: 4px;
+            overflow: hidden;
+            background-color: #ffffff;
+            margin: 0 10px;
+        }
+
+        .nav-search:focus-within {
+            box-shadow: 0 0 0 3px #f90;
+        }
+
+        .search-category {
+            background-color: #e6e6e6;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 0 10px;
+            font-size: 13px;
+            cursor: pointer;
+            border-right: 1px solid #ddd;
+        }
+
+        .search-category:hover {
+            background-color: #d4d4d4;
+            color: #111;
+        }
+
+        .down-arrow {
+            width: 8px;
+            height: 5px;
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 0 12px;
+            font-size: 15px;
+        }
+
+        .search-btn {
+            width: 45px;
+            background-color: #febd69;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .search-btn:hover {
+            background-color: #f3a847;
+        }
+
+        .search-btn img {
+            width: 18px;
+            height: 18px;
+        }
+
+       
+        .nav-lang {
+            gap: 4px;
+        }
+
+        .flag-icon {
+            width: 20px;
+            height: 14px;
+        }
+
+       
+        .nav-account {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .account-second-line {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+       
+        .nav-orders {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+       
+        .nav-cart {
+            display: flex;
+            align-items: flex-end;
+            gap: 5px;
+        }
+
+        .cart-icon {
+            height: 28px;
+        }
+
+        .cart-text {
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 2px;
+        }
+
+       
+        .subnav {
+            height: 39px;
+            background-color: #232f3e;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .subnav-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            overflow-x: auto;
+        }
+
+        .subnav-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+            cursor: pointer;
+            padding: 5px 6px;
+            border: 1px solid transparent;
+            border-radius: 2px;
+        }
+
+        .subnav-item:hover {
+            border-color: #ffffff;
+        }
+
+        .hamburger-icon {
+            width: 16px;
+            height: 14px;
+        }
+
+        .subnav-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            padding: 3px 6px;
+            border: 1px solid transparent;
+            border-radius: 2px;
+            white-space: nowrap;
+        }
+
+        .subnav-right:hover {
+            border-color: #ffffff;
+        }
+
+        .lion-img {
+            height: 24px;
+        }
+
+        .prime-text {
+            display: flex;
+            flex-direction: column;
+            font-size: 12px;
+            line-height: 1.1;
+            text-align: right;
+        }
+
+        .prime-brand {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .subnav-right-arrow {
+            height: 12px;
+        }
+
+       
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 520px;
+            background-image: url('background picture.png');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+        }
+
+        .hero-banner::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(to bottom, rgba(234, 237, 237, 0) 0%, rgba(234, 237, 237, 1) 100%);
+            pointer-events: none;
+        }
+
+       
+        .slider-arrow {
+            position: absolute;
+            top: 150px;
+            cursor: pointer;
+            z-index: 5;
+            padding: 8px 6px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-arrow:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            outline: 2px solid #007185;
+        }
+
+        .slider-arrow.left {
+            left: 15px;
+        }
+
+        .slider-arrow.right {
+            right: 15px;
+        }
+
+        .slider-arrow img {
+            height: 38px;
+        }
+
+       
+        .cards-container {
+            position: relative;
+            z-index: 10;
+            max-width: 1500px;
+            margin: -240px auto 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+       
+        .card {
+            background-color: #ffffff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            font-size: 21px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            color: #0f1111;
+        }
+
+       
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 12px;
+            margin-bottom: 15px;
+        }
+
+        .grid-item {
+            cursor: pointer;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 105px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .grid-item p {
+            font-size: 12px;
+            color: #0f1111;
+            margin-top: 5px;
+            line-height: 1.3;
+        }
+
+       
+        .single-img-card img {
+            width: 100%;
+            height: 275px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+       
+        .card-link {
+            text-decoration: none;
+            color: #007185;
+            font-size: 13px;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+            color: #c7511f;
+        }
+
+       
+        .column-two-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .signin-box {
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .signin-box h2 {
+            font-size: 21px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
+
+        .signin-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #ffd814;
+            border: 1px solid #fcd200;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+        }
+
+        .signin-btn:hover {
+            background-color: #f7ca00;
+            border-color: #f2c200;
+        }
+
+        .ad-box {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            cursor: pointer;
+        }
+
+        .ad-box img {
+            width: 100%;
+            display: block;
+        }
+
+       
+        @media (max-width: 1150px) {
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: -150px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+                margin-top: -50px;
+            }
+            .subnav-left {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+   
+    <header>
+        <div class="navbar">
+           
+           
+            <div class="nav-logo hover-border">
+                <img src="logo.png" alt="Amazon Logo">
+            </div>
+
+           
+            <div class="nav-address hover-border">
+                <img src="location.png" alt="Location" class="loc-icon">
+                <div class="address-text">
+                    <span class="text-small">Hello</span>
+                    <span class="text-bold">Select your address</span>
+                </div>
+            </div>
+
+           
+            <div class="nav-search">
+                <div class="search-category">
+                    <span>All</span>
+                    <img src="down arrow.png" alt="arrow" class="down-arrow">
+                </div>
+                <input type="text" class="search-input" placeholder="Search Amazon.in">
+                <button class="search-btn">
+                    <img src="search icon.png" alt="Search">
+                </button>
+            </div>
+
+         
+            <div class="nav-lang hover-border">
+                <img src="indian flag.png" alt="Indian Flag" class="flag-icon">
+                <img src="down arrow.png" alt="arrow" class="down-arrow">
+            </div>
+
+         
+            <div class="nav-account hover-border">
+                <span class="text-small">Hello, Sign in</span>
+                <div class="account-second-line">
+                    <span class="text-bold">Account & Lists</span>
+                    <img src="down arrow.png" alt="arrow" class="down-arrow">
+                </div>
+            </div>
+
+         
+            <div class="nav-orders hover-border">
+                <span class="text-small">Returns</span>
+                <span class="text-bold">& Orders</span>
+            </div>
+
+         
+            <div class="nav-cart hover-border">
+                <img src="cart icon.png" alt="Cart" class="cart-icon">
+                <span class="cart-text">Cart</span>
+            </div>
+
+        </div>
+
+       
+        <div class="subnav">
+            <div class="subnav-left">
+                <div class="subnav-item">
+                    <img src="ham burger icon.png" alt="Menu" class="hamburger-icon">
+                    <strong>All</strong>
+                </div>
+                <div class="subnav-item">Best Sellers</div>
+                <div class="subnav-item">Mobiles</div>
+                <div class="subnav-item">Customer Service</div>
+                <div class="subnav-item">Today's Deals</div>
+                <div class="subnav-item">Fashion</div>
+                <div class="subnav-item">Electronics</div>
+                <div class="subnav-item">Books</div>
+                <div class="subnav-item">
+                    <span>Prime</span>
+                    <img src="down arrow.png" alt="arrow" class="down-arrow">
+                </div>
+                <div class="subnav-item">New Releases</div>
+                <div class="subnav-item">Home & Kitchen</div>
+                <div class="subnav-item">Amazon Pay</div>
+            </div>
+
+            <div class="subnav-right">
+                <img src="lion.png" alt="Prime Day Lion" class="lion-img">
+                <div class="prime-text">
+                    <span class="prime-brand">prime day</span>
+                    <span>23<sup>rd</sup>-24<sup>th</sup> July</span>
+                </div>
+                <img src="top bar right.png" alt="Next" class="subnav-right-arrow">
+            </div>
+        </div>
+    </header>
+
+   
+    <main>
+        <div class="hero-banner">
+         
+            <div class="slider-arrow left">
+                <img src="left arrow.png" alt="Previous">
+            </div>
+
+           
+            <div class="slider-arrow right">
+                <img src="right arrow.png" alt="Next">
+            </div>
+        </div>
+
+        <div class="cards-container">
+           
+           
+            <div class="card">
+                <div>
+                    <h2>Upgrade your home | Amazon Brands & more</h2>
+                    <div class="card-grid">
+                        <div class="grid-item">
+                            <img src="image 17.png" alt="Smart LED TVs">
+                            <p>Smart LED TVs</p>
+                        </div>
+                        <div class="grid-item">
+                            <img src="image 18.png" alt="Appliances">
+                            <p>Appliances</p>
+                        </div>
+                        <div class="grid-item">
+                            <img src="image 20.png" alt="Furniture">
+                            <p>Furniture</p>
+                        </div>
+                        <div class="grid-item">
+                            <img src="image 19.png" alt="Kitchen products">
+                            <p>Kitchen products</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="card-link">Shop now</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h2>Revamp your home in style</h2>
+                    <div class="card-grid">
+                        <div class="grid-item">
+                            <img src="image 25.png" alt="Bedsheets, curtains & more">
+                            <p>Bedsheets, curtains & more</p>
+                        </div>
+                        <div class="grid-item">
+                            <img src="image 24.png" alt="Home decoration">
+                            <p>Home decoration</p>
+                        </div>
+                        <div class="grid-item">
+                            <img src="image 22.png" alt="Home storage">
+                            <p>Home storage</p>
+                        </div>
+                        <div class="grid-item">
+                            <img src="image 21.png" alt="Lighting solutions">
+                            <p>Lighting solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="card-link">Explore all</a>
+            </div>
+
+            <div class="card single-img-card">
+                <div>
+                    <h2>Up to 70% off | Clearance store</h2>
+                    <img src="image 26.png" alt="Clearance store electronics">
+                </div>
+                <a href="#" class="card-link">See more</a>
+            </div>
+
+           
+            <div class="column-two-cards">
+             
+                <div class="signin-box">
+                    <h2>Sign in for your best experience</h2>
+                    <button class="signin-btn">Sign in securely</button>
+                </div>
+             
+                <div class="ad-box">
+                    <img src="image 28.png" alt="Laptops from top brands">
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

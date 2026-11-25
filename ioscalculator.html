@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .calculator {
+            width: 610px;
+            min-height: 850px;
+            background-color: #1c1c1c;
+            padding: 30px 42px;
+        }
+
+        .display {
+            height: 165px;
+            color: white;
+            font-size: 140px;
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 17px 27px;
+        }
+
+        button {
+            width: 100%;
+            height: 108px;
+            border: none;
+            border-radius: 50%;
+            background-color: #505050;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+        }
+
+        .special {
+            background-color: #a5a5a5;
+            color: black;
+        }
+
+        .operator {
+            background-color: #ff9500;
+            color: white;
+        }
+
+        .zero {
+            grid-column: span 2;
+            border-radius: 60px;
+            text-align: left;
+            padding-left: 32px;
+        }
+
+        button:active {
+            opacity: 0.7;
+        }
+
+        @media (max-width: 650px) {
+            .calculator {
+                width: 100%;
+                min-height: 100vh;
+                padding: 30px 20px;
+            }
+
+            .display {
+                font-size: 90px;
+            }
+
+            button {
+                height: auto;
+                aspect-ratio: 1;
+            }
+
+            .zero {
+                aspect-ratio: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+
+        <div class="display">
+            7744
+        </div>
+
+        <div class="buttons">
+
+            <button class="special">C</button>
+            <button class="special">+/-</button>
+            <button class="special">%</button>
+            <button class="operator">÷</button>
+
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operator">X</button>
+
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operator">-</button>
+
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="operator">+</button>
+
+            <button class="zero">0</button>
+            <button>,</button>
+            <button class="operator">=</button>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

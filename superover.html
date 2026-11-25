@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Over</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+                url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=1600")
+                center/cover no-repeat;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            padding: 30px;
+        }
+        .logo {
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            line-height: 25px;
+        }
+
+        .logo span {
+            display: block;
+        }
+        .score-container {
+            display: flex;
+            justify-content: center;
+            gap: 90px;
+            margin-top: 80px;
+        }
+
+        .score-card {
+            width: 430px;
+            height: 340px;
+            border-radius: 20px;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .india {
+            background-color: rgba(0, 105, 255, 0.85);
+        }
+        .pakistan {
+            background-color: rgba(0, 180, 0, 0.85);
+        }
+
+        .team-name {
+            font-size: 80px;
+            font-weight: bold;
+            margin-bottom: 35px;
+        }
+        .balls {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .balls span {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background-color: white;
+            color: black;
+            font-size: 28px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .total {
+            font-size: 45px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 55px;
+            margin-top: 75px;
+        }
+
+        .btn {
+            width: 95px;
+            height: 95px;
+            border-radius: 28px;
+            border: 5px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+        }
+
+        .edit {
+            background-color: orange;
+        }
+
+        .reset {
+            background-color: #e60000;
+        }
+        @media (max-width: 950px) {
+            .score-container {
+                gap: 25px;
+            }
+
+            .score-card {
+                width: 45%;
+                padding: 35px 10px;
+            }
+
+            .team-name {
+                font-size: 55px;
+            }
+
+            .balls {
+                gap: 4px;
+            }
+
+            .balls span {
+                width: 35px;
+                height: 35px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .score-container {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 40px;
+            }
+
+            .score-card {
+                width: 100%;
+                max-width: 430px;
+            }
+
+            .buttons {
+                margin-top: 40px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="logo">
+            🏏 SUPER
+            <span>OVER</span>
+        </div>
+        <div class="score-container">
+            <div class="score-card india">
+
+                <h1 class="team-name">IND</h1>
+
+                <div class="balls">
+                    <span>4</span>
+                    <span>3</span>
+                    <span>2</span>
+                    <span>6</span>
+                    <span>6</span>
+                    <span>6</span>
+                </div>
+
+                <p class="total">27/0</p>
+
+            </div>
+            <div class="score-card pakistan">
+
+                <h1 class="team-name">PAK</h1>
+
+                <div class="balls">
+                    <span>2</span>
+                    <span>4</span>
+                    <span>0</span>
+                    <span>3</span>
+                    <span>1</span>
+                    <span>4</span>
+                </div>
+
+                <p class="total">14/0</p>
+
+            </div>
+
+        </div>
+        <div class="buttons">
+
+            <div class="btn edit">✎</div>
+
+            <div class="btn reset">⟲</div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kidz World</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Rubik, sans-serif;
+            color: #000;
+            background: #fff;
+        }
+
+        .wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header */
+        header {
+            height: 48px;
+        }
+
+        .bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 48px;
+        }
+
+        .logo {
+            height: 22px;
+        }
+
+        .cart {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .cart img {
+            height: 30px;
+        }
+
+        /* hero */
+        .hero {
+            height: clamp(260px, 28.5vw, 440px);
+            background: #ff4a5f url("images/kw-background__1_.png") right bottom / cover no-repeat;
+            color: #fff;
+        }
+
+        .hero .wrap {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+            font-weight: 500;
+            font-size: clamp(38px, 5.6vw, 72px);
+            line-height: 1.2;
+        }
+
+        .hero .tag {
+            font-weight: 500;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        /* sections */
+        section {
+            margin-top: 110px;
+        }
+
+        section:first-child {
+            margin-top: 160px;
+        }
+
+        h2 {
+            font-family: "Playfair Display", serif;
+            font-weight: 500;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 24px 57px;
+        }
+
+        .books {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        .items {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px 60px;
+        }
+
+        /* images */
+        .cover {
+            width: 100%;
+            aspect-ratio: 188 / 258;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .tile {
+            width: 100%;
+            aspect-ratio: 282 / 258;
+            object-fit: cover;
+            border-radius: 14px;
+            display: block;
+        }
+
+        .yellow {
+            background: #ffc925;
+        }
+
+        .outlined {
+            border: 1px solid #e3e3e3;
+        }
+
+        /* card text */
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .sub {
+            font-size: 14px;
+            color: #8a8a8a;
+            margin-top: 6px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 14px;
+        }
+
+        .price {
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        .add {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: #5b94ff;
+            color: #fff;
+            border: 0;
+            border-radius: 3px;
+            padding: 5px 9px;
+            font: 500 16px Rubik, sans-serif;
+            cursor: pointer;
+        }
+
+        .add:hover {
+            background: #3f7df5;
+        }
+
+        .add img {
+            height: 16px;
+        }
+
+        footer {
+            height: 120px;
+        }
+
+        /* responsive */
+        @media (max-width: 1000px) {
+            .books {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .items {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 560px) {
+            .books {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .items {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                margin-top: 64px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="wrap bar">
+            <img class="logo" src="images/kw-logo__1_.png" alt="Kidz World">
+            <div class="cart">
+                <img src="images/cart-icon.png" alt="">
+                <span>Cart items (0)</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="wrap">
+            <h1>Shop.<br>Have Fun.<br>Repeat.</h1>
+            <div class="tag">#NewAndNow</div>
+        </div>
+    </div>
+
+    <main class="wrap">
+
+        <section>
+            <h2>Discover New Books</h2>
+            <div class="grid books">
+                <article class="book">
+                    <img class="cover" src="images/book1__1_.png" alt="This was our pact">
+                    <h3>This was our pact</h3>
+                    <p class="sub">Ryan Andrews</p>
+                    <div class="row"><span class="price">$7.49</span>
+                        <button class="add">Add <img src="images/cart-icon-white.png" alt=""></button>
+                    </div>
+                </article>
+                <article class="book">
+                    <img class="cover" src="images/book2__1_.png" alt="The famous five">
+                    <h3>The famous five</h3>
+                    <p class="sub">Guid Blyton</p>
+                    <div class="row"><span class="price">$4.59</span>
+                        <button class="add">Add <img src="images/cart-icon-white.png" alt=""></button>
+                    </div>
+                </article>
+                <article class="book">
+                    <img class="cover" src="images/book3__2_.png" alt="Matlida">
+                    <h3>Matlida</h3>
+                    <p class="sub">Roald Dahl</p>
+                    <div class="row"><span class="price">$6.80</span>
+                        <button class="add">Add <img src="images/cart-icon-white.png" alt=""></button>
+                    </div>
+                </article>
+                <article class="book">
+                    <img class="cover" src="images/book4__1_.png" alt="Harry Potter">
+                    <h3>Harry Potter</h3>
+                    <p class="sub">JK Rowling</p>
+                    <div class="row"><span class="price">$10</span>
+                        <button class="add">Add <img src="images/cart-icon-white.png" alt=""></button>
+                    </div>
+                </article>
+                <article class="book">
+                    <img class="cover" src="images/book5__1_.png" alt="For Young Readers">
+                    <h3>For Young Readers</h3>
+                    <p class="sub">Ruskin Bond</p>
+                    <div class="row"><span class="price">$7.29</span>
+                        <button class="add">Add <img src="images/cart-icon-white.png" alt=""></button>
+                    </div>
+                </article>
+                <article class="book">
+                    <img class="cover" src="images/book6__1_.png" alt="Wimpy Kid - DIY">
+                    <h3>Wimpy Kid - DIY</h3>
+                    <p class="sub">Jeff Kinney</p>
+                    <div class="row"><span class="price">$4.99</span>
+                        <button class="add">Add <img src="images/cart-icon-white.png" alt=""></button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>Discover New Games</h2>
+            <div class="grid items">
+                <article class="item">
+                    <img class="tile yellow" src="images/dart-board__1_.png" alt="Dart Board">
+                    <h3>Dart Board</h3>
+                    <p class="sub">Wooden board, 16 inches</p>
+                    <div class="row"><span class="price">$17.49</span>
+                        <button class="add">Add <img src="images/cart-icon-white.png" alt=""></button>
+                    </div>
+                </article>
+                <article class="item">
+                    <img class="tile yellow" src="images/connect-four__1_.png" alt="Connect 4">
+                    <h3>Connect 4</h3>
+                    <p class="sub">Board game, multiplayer</p>
+                    <div class="row"><span class="price">$19.99</span>
+                        <button class="add">Add <img src="images/cart-icon-white.png" alt=""></button>
+                    </div>
+                </article>
+                <article class="item">
+                    <img class="tile yellow" src="images/jenga__1_.png" alt="Jenga">
+                    <h3>Jenga</h3>
+                    <p class="sub">Wooden blocks, 54 pieces</p>
+                    <div class="row"><span class="price">$20.99</span>
+                        <button class="add">Add <img src="images/cart-icon-white.png" alt=""></button>
+                    </div>
+                </article>
+                <article class="item">
+                    <img class="tile yellow" src="images/monopoly__1_.png" alt="Monopoly">
+                    <h3>Monopoly</h3>
+                    <p class="sub">1.61 x 15.75 x 10.51 inches</p>
+                    <div class="row"><span class="price">$19.49</span>
+                        <button class="add">Add <img src="images/cart-icon-white.png" alt=""></button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>Handmade with love</h2>
+            <div class="grid items">
+                <article class="item">
+                    <img class="tile outlined" src="images/bookmarks__1_.png" alt="Bookmarks">
+                    <h3>Bookmarks</h3>
+                    <p class="sub">Handmade with love</p>
+                    <div class="row"><span class="price">$12.49</span>
+                        <button class="add">Add <img src="images/cart-icon-white.png" alt=""></button>
+                    </div>
+                </article>
+                <article class="item">
+                    <img class="tile outlined" src="images/birthday-card.png" alt="Birthday card">
+                    <h3>Birthday card</h3>
+                    <p class="sub">Handmade with love</p>
+                    <div class="row"><span class="price">$19.99</span>
+                        <button class="add">Add <img src="images/cart-icon-white.png" alt=""></button>
+                    </div>
+                </article>
+                <article class="item">
+                    <img class="tile outlined" src="images/stuffed-toy__1_.png" alt="Stuffed toys">
+                    <h3>Stuffed toys</h3>
+                    <p class="sub">Handmade with love</p>
+                    <div class="row"><span class="price">$15.99</span>
+                        <button class="add">Add <img src="images/cart-icon-white.png" alt=""></button>
+                    </div>
+                </article>
+                <article class="item">
+                    <img class="tile outlined" src="images/dream-catcher__1_.png" alt="Dream catcher drawing">
+                    <h3>Dream catcher drawing</h3>
+                    <p class="sub">Handmade with love</p>
+                    <div class="row"><span class="price">$18.49</span>
+                        <button class="add">Add <img src="images/cart-icon-white.png" alt=""></button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer></footer>
+</body>
+
+</html>
